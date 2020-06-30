@@ -11,10 +11,10 @@ struct vector3
 	vector3();
 	vector3(float x, float y, float z);
 	vector3(const vector3& obj);
-	vector3(vector3&& obj) = delete;
+	vector3(vector3&& obj) noexcept = default;
 
 	vector3& operator = (const vector3& obj);
-	//vector3& operator = (vector3&& obj);
+	vector3& operator = (vector3&& obj) noexcept = default;
 
 	vector3 operator + (const vector3& obj) const;
 	vector3 operator - (const vector3& obj) const;

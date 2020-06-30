@@ -18,7 +18,7 @@ const unsigned int FACES = 4;
 const unsigned int VERTS = 6;
 const unsigned int VERTS_PER_FACE = 3;
 
-template <class T> std::string to_bin(const T value);
+std::string to_bin(const unsigned int value);
 void calc_mesh_normals(vector3* normals, const vector3* verts,
 	const unsigned int* faces, unsigned int nverts, unsigned int nfaces);
 
@@ -104,7 +104,7 @@ void task_3(const vector3* verts, const unsigned int* faces, vector3* normals, u
 	std::cout << std::endl;
 }
 
-template <class T> std::string to_bin(const T value)
+std::string to_bin(const unsigned int value)
 {
 	std::stringstream s_stream;
 	for (int offset = (sizeof(value) * 8) - 1; offset >= 0; offset--)
